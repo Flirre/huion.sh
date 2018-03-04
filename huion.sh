@@ -2,8 +2,7 @@
 # huion.sh
 # Binds the Huion Tablet to my primary monitor. If no tablet is found, nothing is shown.
 
-monitors=`xrandr | grep primary`
-primaryMonitor=`echo $monitors | grep -o '^\S*'`
+primaryMonitor=`xrandr | grep primary | grep -o '^\S*'`
 
 penLine=`xinput list | grep "Pen Pen"`
 idLocation=`expr index "$penLine" id`
